@@ -1,22 +1,62 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: rgb(196, 204, 209);
-}
-
-form {
-    background-color: aliceblue;
-}
-input{
+body {
+    background-color: #F9F9F9;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 30px;
+    color: #555555;
+  }
+  
+  .form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 20px;
     border-radius: 10px;
-    border-width: 0.7px;
-    border-color: rgb(177, 107, 16);
-}
-
-
-
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  }
+  
+  legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #F0F0F0;
+    color: #333333;
+  }
+  
+  input[type=radio] {
+    margin-right: 5px;
+  }
+  
+  input[type=submit] {
+    background-color: #555555;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #333333;
+  }
+  
 
 
 
