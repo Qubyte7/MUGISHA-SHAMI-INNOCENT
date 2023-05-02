@@ -14,6 +14,7 @@ include 'connect.php'
 <script src="https://kit.fontawesome.com/903c1ac2f1.js" crossorigin="anonymous"></script>
   <button><a href="pdf.php">GENERATE PDF</a></button>  
    <button><a href="csv.php">GENERATE CSV</a></button> 
+   <button><a href="logout.php">logout</a></button>
 <div class="container">
     <button class="btn"><a href="Sign_up.php"> add user</a></button>
     <table class="table" border='2px solid black'>
