@@ -25,7 +25,7 @@ include 'connect.php'
       <th scope="col">First name</th>
       <th scope="col">Last name</th>
       <th scope="col">Email</th>
-      <th scope="col">Password</th>
+      <!-- <th scope="col">Password</th> -->
       <th scope="col">Gender</th>
       <th scope="col">Operation</th>
     </tr>
@@ -41,7 +41,7 @@ include 'connect.php'
         $firstname =$row['fname'];
         $lastname =$row['lname'];
         $email=$row['email'];
-        $password=$row['password'];
+        // $password=$row['password'];
         $gender = $row['gender'];
 
    
@@ -49,8 +49,7 @@ include 'connect.php'
         <th scope="row">'.$id.'</th>
         <td>'.$firstname.'</td>
         <td>'.$lastname.'</td>
-        <td>'.$email.'</td>
-        <td>'.$password.'</td>
+        <td>'.$email.'</td>   
         <td>'.$gender.'</td>
         <td>
         <button><a href="update.php?updateid='.$id.'">update</a></button>

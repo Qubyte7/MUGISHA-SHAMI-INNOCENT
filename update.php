@@ -4,11 +4,11 @@ include 'connect.php';
 
 
 $id=$_GET['updateid'];
-$sql = "select * from `crud` where id=$id";
+$sql = "select * from `users` where id=$id";
 $result = mysqli_query($connection,$sql);
 $row = mysqli_fetch_assoc($result);
-$firstname = $row['firstname'];
-$lastname = $row['lastname'];
+$firstname = $row['fname'];
+$lastname = $row['lname'];
 $email = $row['email'];
 $password=$row['password'];  
 $gender = $row['gender'];
@@ -16,13 +16,12 @@ $gender = $row['gender'];
 
   
 if(isset($_POST['submit'])){
-    $firstname = $row['firstname'];
-    $lastname = $row['lastname'];
+    $firstname = $_POST['fname'];
+    $lastname = $_POST['lname'];
     $email=$_POST['email'];
-    $password=$_POST['password'];
-    $gender = $row['gender'];
-
-    $sql ="update `crud` set id=$id,fname='$firstname',lname='$lastname,email='$email',password='$password',gender='$gender' where id=$id";  //note that the name 'crud' we are using is the name of the tabe in uor database
+    // $password=$_POST['password'];
+    $gender = $_POST['gender'];
+    $sql ="update `users` SET fname='$firstname',lname='$lastname',email='$email',gender='$gender' WHERE `id`='$id'";  //note that the name 'crud' we are using is the name of the tabe in uor database
     $result=mysqli_query($connection,$sql);//thi query will help to run our above query of user storing pf the user
     
     if($result){
@@ -50,25 +49,25 @@ if(isset($_POST['submit'])){
  </head>
  <body>
     <div class="container ">
-        <form method="post">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="name" placeholder="Enter your name" name="name" value="<?php echo $name ?>">
-            </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="email" placeholder="Enter your email" name="email" value="<?php echo $email ?>">
-        </div>
-        <div class="form-group">
-            <label for="mobile">Mobile</label>
-            <input type="text" class="mobile" placeholder="Enter your mobile numbr" name="mobile" value="<?php echo $mobile ?>">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="password" placeholder="Enter your password" name="password" value="<?php echo $password ?>">
-        </div>
-        <input type="submit" name="submit" value="update" >
-        </form>
+        <form  method="POST">
+         <fieldset>
+            <legend>Personal Information:</legend> 
+            <div class="form">
+        First name :<br> <input type="text" name="firstname" value="<?php echo $firstname ?>"/>
+        <br>
+        Last name :<br> <input type="text" name="lastname" value="<?php echo $lastname ?>"/>
+        <br> 
+        Email:<br><input type="email" name="email" value="<?php echo $email ?>"/>
+        <br>
+        <!-- Password:<br><input type="password" name="password">
+        <br> -->
+        Gender:<br><input type="radio" name="gender" value="Male"  value="<?php if($gender == 'Male'){echo 'checked';} ?>">Male
+        <input type="radio" name="gender" value="Female" value="<?php if($gender == 'Female'){echo 'checked';} ?>"> Female
+        <br><br>
+        <input type="submit" name="submit" value="Update">    
+     </fieldset> 
+</div>
+    </form>
     </div>
  </body>
  </html>

@@ -2,9 +2,14 @@
 include 'connect.php';
 if(isset($_GET['deleteid'])){
     $id=$_GET['deleteid'];
-    $sql = "delete from `crud` where id=$id";
+    $sql = "delete from `users` where id=$id";
+   
+   
+   
+   
     $result=mysqli_query($connection,$sql);
-if($result){
+
+    if($result){
     header('location:display.php');
 }else{
     die(mysqli_error($connection));
