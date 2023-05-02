@@ -13,7 +13,7 @@ $sql = "INSERT INTO users(fname,lname,email,password,gender) VALUES ('$first_nam
 $result=mysqli_query($connection,$sql);//thi query will help to run our above query of user storing pf the user
     
 if($result){
-   header('location:display.php');
+   header('location:login.php');
 }else{
     die(mysqli_error($connection));
 };

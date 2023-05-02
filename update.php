@@ -16,8 +16,8 @@ $gender = $row['gender'];
 
   
 if(isset($_POST['submit'])){
-    $firstname = $_POST['fname'];
-    $lastname = $_POST['lname'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
     $email=$_POST['email'];
     // $password=$_POST['password'];
     $gender = $_POST['gender'];
@@ -44,7 +44,6 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <title>Crud of mine</title>
  </head>
  <body>

@@ -14,8 +14,8 @@ include 'connect.php'
     <title>Document</title>
 </head>
 <body>
-    <a href="pdf.php">GENERATE PDF</a>
-    <a href="csv.php">GENERATE CSV</a>
+  <button><a href="pdf.php">GENERATE PDF</a></button>  
+   <button><a href="csv.php">GENERATE CSV</a></button> 
 <div class="container">
     <button class="btn"><a href="Sign_up.php"> add user</a></button>
     <table class="table" border='2px solid black'>
