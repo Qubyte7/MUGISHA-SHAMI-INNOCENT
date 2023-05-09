@@ -23,6 +23,7 @@
         <input type="radio" name="gender" value="Female"> Female
         <br><br>
         <input type="submit" name="submit" value="Submit">    
+        <h3>All Ready Have An Account Login <a href="login.php">Login</a></h3>
      </fieldset> 
 </div>
     </form>

@@ -32,6 +32,12 @@ include 'connect.php'
   <tbody>
 
   <?php
+    session_start();
+    if(!isset($_SESSION['email'])){
+      header('location:login.php');
+      exit();
+    }
+
   $sql = " select * from `users`";
   $result= mysqli_query($connection,$sql);
   if($result){
@@ -57,9 +63,7 @@ include 'connect.php'
       </tr>';   
     }}
  ?>
-
-
-  </tbody>
+</tbody>
 </table> 
 </div> 
 </body>

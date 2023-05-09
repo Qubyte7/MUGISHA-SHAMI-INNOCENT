@@ -2,24 +2,19 @@
 <html>
     <head><title>Login Page</title></head>
     <style>
-      /* global styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
 }
-
 h2 {
   text-align: center;
   margin: 30px 0;
 }
-
-/* form styles */
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -28,13 +23,11 @@ form {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   padding: 30px;
 }
-
 label {
   display: block;
   font-size: 18px;
   margin-bottom: 10px;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -46,11 +39,9 @@ input[type="password"] {
   padding: 10px;
   margin-bottom: 20px;
 }
-
 input[type="radio"] {
   margin-right: 10px;
 }
-
 input[type="submit"] {
   background-color: #4CAF50;
   color: white;
@@ -60,22 +51,18 @@ input[type="submit"] {
   font-size: 16px;
   cursor: pointer;
 }
-
 input[type="submit"]:hover {
   background-color: #3e8e41;
 }
-
 fieldset {
   border: none;
   margin-bottom: 20px;
 }
-
 legend {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
     </style>
 <body>
 <form action="" method="POST">
@@ -86,15 +73,13 @@ legend {
 <input type="password" name="password">
 <br>
 <input type="submit" name="submit" value="Login">
-</form>    
+<h2> create an account <a href="Sign_up.php">Sign_up</a></h2>   
+</form> 
 </body>
 </html>
 
-
-
 <?php 
 include 'connect.php';
-
 if(isset($_POST['submit'])){
   $email = $_POST['email'];
   $password = sha1($_POST['password']);//you can also use sha1 but md5 is more higly secure
@@ -105,7 +90,9 @@ if(isset($_POST['submit'])){
    $row=mysqli_fetch_assoc($result);
 $storedPassword=$row['password'];
 if($storedPassword==$password){
-    header('location:display.php');
+  session_start();
+  $_SESSION["email"]= $email;
+  header('location:display.php');
 }
 else{
     echo "Invalid email or password";
@@ -114,26 +101,5 @@ else{
   else{
     echo "Invalid email or password";
   }
-
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
