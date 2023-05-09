@@ -95,11 +95,11 @@ if($storedPassword==$password){
   header('location:display.php');
 }
 else{
-    echo "Invalid email or password";
+    echo '<h3> Invalid email or password </h3>';
 }
   }
   else{
-    echo "Invalid email or password";
+    echo '<h3>Invalid email or password</h3>';
   }
 }
 ?>
